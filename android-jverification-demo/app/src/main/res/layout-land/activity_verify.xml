@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/rootView"
+    android:layout_height="match_parent" >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/layout_back"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"
+            android:src="@drawable/btn_back" />
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/view_verification_code"
+        layout="@layout/view_verification_code"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/ll_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:paddingBottom="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_marginRight="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#8F8F97"
+                android:layout_marginRight="8dp"
+                android:text="本机号码"/>
+            <EditText
+                android:id="@+id/til_num"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:lines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="输入本机号码"
+                android:textColorHint="#D5D6E0"
+                android:background="@null"
+                android:maxLength="11"
+                android:textColor="#222328"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFE0E2EA"
+            android:layout_alignLeft="@+id/ll_edittext"
+            android:layout_alignRight="@id/ll_edittext"
+            android:layout_below="@+id/ll_edittext"
+            />
+        <TextView
+            android:id="@+id/tvtip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_edittext"
+            android:text="请输入正确的手机号码"
+            android:layout_alignLeft="@+id/ll_edittext"
+            android:textSize="12sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#ff0000"
+            android:visibility="invisible"
+            />
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/ButtonNormal"
+            android:layout_below="@+id/tvtip"
+            android:layout_centerHorizontal="true"
+            android:text="认证" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_above="@id/rl_login">
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:gravity="center"
+        android:background="@color/color40black">
+        <pl.droidsonroids.gif.GifImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/loading_gif"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_net_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:text="验证本机号码需将该号码的数据网络打开，同时支持使用WiFi"
+        android:textColor="@color/colorNewworkText"
+        android:textSize="12sp"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/view_msg_warning"
+        layout="@layout/view_msg_warning"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_verification_code"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

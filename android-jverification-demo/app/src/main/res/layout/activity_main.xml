@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg" >
+
+    <RelativeLayout
+        android:id="@+id/layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_time"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/ButtonNormal"
+            android:layout_marginTop="24dp"
+            android:layout_centerHorizontal="true"
+            android:text="一键登录/全屏" />
+
+        <Button
+            android:id="@+id/btn_login_dialog"
+            style="@style/ButtonNormal"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:text="一键登录/弹窗" />
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/ButtonNormal"
+            android:layout_below="@+id/btn_login_dialog"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/selector_btn_verify"
+            android:textColor="#3A51FF"
+            android:text="本机号码验证" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shape_view_landscape"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+            <cn.jiguang.auth.common.TextViewVertical
+                android:id="@+id/tv_show_landscape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_landscape"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shape_view_landscape"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="#AAAEC2"
+                android:text="翻"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#AAAEC2"
+                android:text="转"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#AAAEC2"
+                android:text="体"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#AAAEC2"
+                android:text="验"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#AAAEC2"
+                android:text="横"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#AAAEC2"
+                android:layout_marginBottom="5dp"
+                android:text="屏"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/image"
+        android:layout_above="@id/layout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/main_gif"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/ic_logo" />
+
+    <LinearLayout
+        android:layout_above="@id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:id="@+id/layout_logo"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_verification"
+                android:layout_marginRight="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleY="0.7"
+                android:scaleX="0.7"
+                android:src="@drawable/main_logo"/>
+
+            <TextView
+                android:textSize="30sp"
+                android:id="@+id/tv_verification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="极光认证"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_below="@id/layout_logo"
+            android:textSize="13sp"
+            android:layout_marginTop="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="快速集成，一键认证，提高用户体验和验证安全性"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/progressbar"
+        android:gravity="center"
+        android:background="@color/color40black">
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/loading_gif"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

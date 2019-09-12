@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "填写您app的包名"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 4
+        versionName "2.4.4"
+        signingConfig signingConfigs.debug
+        manifestPlaceholders = [
+                // 设置manifest.xml中的变量
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "填写您申请的appkey",
+                JPUSH_CHANNEL: "default_developer",
+        ]
+    }
+    signingConfigs {
+        debug {
+            // 请使用您在后台提交的签名来打包
+//            storeFile file("./debug.keystore")
+//            storePassword "android"
+//            keyAlias "androiddebugkey"
+//            keyPassword "android"
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            buildConfigField("boolean", "DEBUG_ENABLE", "true")
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            buildConfigField("boolean", "DEBUG_ENABLE", "false")
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    packagingOptions {
+        exclude 'assets/serverPublicKey.pem'
+        exclude 'assets/clientCert.crt'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:24.0.0'
+    implementation 'com.android.support:design:24.0.0'
+
+    implementation 'cn.jiguang.sdk:jcore:2.1.2'  // 此处以JCore 2.1.2 版本为例。
+
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}
