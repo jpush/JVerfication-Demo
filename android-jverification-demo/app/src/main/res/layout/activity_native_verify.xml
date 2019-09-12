@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <include
+        layout="@layout/layout_titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textStyle="bold"
+        android:text="手机号码登录"
+        android:textSize="24sp"
+        android:textColor="#FF222328"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="35dp"
+        />
+    <LinearLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerInParent="true"
+        android:paddingBottom="30dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#8F8F97"
+                android:layout_marginRight="15dp"
+                android:textSize="16sp"
+                android:text="手机号"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#222328"
+                android:textSize="16sp"
+                android:text="13888888888"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFE0E2EA"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#8F8F97"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:text="验证码"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#222328"
+                android:textSize="16sp"
+                android:text="8352"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50s"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/seper"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFE0E2EA"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            />
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/ButtonNormal"
+            android:layout_below="@+id/seper"
+            android:layout_gravity="center_horizontal"
+            android:text="登录" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_go_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rl_login"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_horizontal"
+        android:text="一键登录"
+        android:textColor="#FF8F8F97"
+        android:textSize="14sp"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

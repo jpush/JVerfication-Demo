@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg_land" >
+
+    <RelativeLayout
+        android:id="@+id/layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/ButtonNormalLand"
+            android:layout_centerHorizontal="true"
+            android:text="一键登录/全屏" />
+
+        <Button
+            android:id="@+id/btn_login_dialog"
+            style="@style/ButtonNormalLand"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginTop="14dp"
+            android:layout_centerHorizontal="true"
+            android:text="一键登录/弹窗" />
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/ButtonNormalLand"
+            android:layout_below="@+id/btn_login_dialog"
+            android:layout_marginTop="14dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/selector_btn_verify_land"
+            android:textColor="@android:color/white"
+            android:text="本机号码验证" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_above="@id/layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:id="@+id/layout_logo"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_verification"
+                android:layout_marginRight="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleY="0.7"
+                android:scaleX="0.7"
+                android:src="@drawable/main_logo"/>
+
+            <TextView
+                android:textSize="30sp"
+                android:id="@+id/tv_verification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="极光认证"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_below="@id/layout_logo"
+            android:textSize="13sp"
+            android:layout_marginTop="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="快速集成，一键认证，提高用户体验和验证安全性"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:alpha="0.33"
+        android:src="@drawable/ic_logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/progressbar"
+        android:gravity="center"
+        android:background="@color/color40black">
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/loading_gif"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
