@@ -67,6 +67,7 @@
 		6633D982222D0519000C3FBA /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6633D981222D0518000C3FBA /* libc++.1.tbd */; };
 		9BCEEE4AE27FC11AC2D47C9D /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A8FE26308DD792348CA171 /* Pods_demo.framework */; };
 		9D1FA4D0231E577D0028729D /* jverification-ios-2.4.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1FA4CF231E577D0028729D /* jverification-ios-2.4.8.a */; };
+		9D26DBAD235055D30024A39A /* jshare-ios-1.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D26DBAB235055D30024A39A /* jshare-ios-1.7.0.a */; };
 		9D46A179230A499700E6B3C6 /* jcore-ios-2.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D46A177230A499700E6B3C6 /* jcore-ios-2.1.1.a */; };
 		9D46A17D230A81AF00E6B3C6 /* 首页动画@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D46A17C230A81AF00E6B3C6 /* 首页动画@3x.gif */; };
 		9D46A180230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D46A17F230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.m */; };
@@ -146,6 +147,8 @@
 		6633D981222D0518000C3FBA /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		9D0EB17E231647FF00FDF08D /* JVERIFICATIONService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVERIFICATIONService.h; sourceTree = "<group>"; };
 		9D1FA4CF231E577D0028729D /* jverification-ios-2.4.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jverification-ios-2.4.8.a"; sourceTree = "<group>"; };
+		9D26DBAB235055D30024A39A /* jshare-ios-1.7.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jshare-ios-1.7.0.a"; sourceTree = "<group>"; };
+		9D26DBAC235055D30024A39A /* JSHAREService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSHAREService.h; sourceTree = "<group>"; };
 		9D46A177230A499700E6B3C6 /* jcore-ios-2.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-2.1.1.a"; sourceTree = "<group>"; };
 		9D46A17C230A81AF00E6B3C6 /* 首页动画@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "首页动画@3x.gif"; sourceTree = "<group>"; };
 		9D46A17E230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneNumberLoginViewController.h; sourceTree = "<group>"; };
@@ -179,6 +182,7 @@
 				9D46A179230A499700E6B3C6 /* jcore-ios-2.1.1.a in Frameworks */,
 				6633D97C222D0502000C3FBA /* EAccountApiSDK.framework in Frameworks */,
 				63EC3B9B2186FE030092F151 /* CFNetwork.framework in Frameworks */,
+				9D26DBAD235055D30024A39A /* jshare-ios-1.7.0.a in Frameworks */,
 				63EC3B992186FDFB0092F151 /* CoreLocation.framework in Frameworks */,
 				63EC3B932186FD530092F151 /* account_verify_sdk_core.framework in Frameworks */,
 				9BCEEE4AE27FC11AC2D47C9D /* Pods_demo.framework in Frameworks */,
@@ -291,6 +295,8 @@
 			children = (
 				9D46A177230A499700E6B3C6 /* jcore-ios-2.1.1.a */,
 				9D1FA4CF231E577D0028729D /* jverification-ios-2.4.8.a */,
+				9D26DBAB235055D30024A39A /* jshare-ios-1.7.0.a */,
+				9D26DBAC235055D30024A39A /* JSHAREService.h */,
 				9D0EB17E231647FF00FDF08D /* JVERIFICATIONService.h */,
 				6633D975222D0501000C3FBA /* account_login_sdk_noui_core.framework */,
 				6633D977222D0502000C3FBA /* account_verify_sdk_core.framework */,
@@ -626,7 +632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8X2A38Q9VD;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -643,6 +649,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiguang.verification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -656,7 +663,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8X2A38Q9VD;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -673,6 +680,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiguang.verification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
