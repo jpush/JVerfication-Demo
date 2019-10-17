@@ -223,6 +223,8 @@
     config.navCustom = YES;
     config.autoLayout = YES;
     config.modalTransitionStyle =  UIModalTransitionStyleCrossDissolve;
+    config.agreementNavReturnImage = [UIImage imageNamed:@"close"];
+
     //弹框
     config.showWindow = YES;
 
@@ -353,13 +355,13 @@
 - (void)customUI{
     JVUIConfig *config = [[JVUIConfig alloc] init];
     config.navReturnImg = [UIImage imageNamed:@"back"];
+    config.agreementNavReturnImage = [UIImage imageNamed:@"close"];
     config.autoLayout = YES;
     config.navText = @"";
     config.navDividingLineHidden = YES;
     config.prefersStatusBarHidden = NO;
     _config = config;
     _config.navControl = [[UIBarButtonItem alloc] initWithCustomView:self.rightPhoneBtn];
-    _config.navBarBackGroundImage = [UIImage imageNamed:@"cuccLogo"];
     config.privacyComponents = @[@"同意《",@"",@"",@"》并授权极光认证Demo获取本机号码"];
 
     config.navColor = [UIColor whiteColor];
