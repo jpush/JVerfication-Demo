@@ -15,6 +15,7 @@
 #import <ImageIO/ImageIO.h>
 #import <SDWebImage/SDWebImage.h>
 #import "UIView+Tools.h"
+#import "JSHAREService.h"
 @interface ViewController (){
     JVUIConfig * _config;
 }
@@ -358,7 +359,7 @@
     config.prefersStatusBarHidden = NO;
     _config = config;
     _config.navControl = [[UIBarButtonItem alloc] initWithCustomView:self.rightPhoneBtn];
-
+    _config.navBarBackGroundImage = [UIImage imageNamed:@"cuccLogo"];
     config.privacyComponents = @[@"同意《",@"",@"",@"》并授权极光认证Demo获取本机号码"];
 
     config.navColor = [UIColor whiteColor];
@@ -505,6 +506,7 @@
     CGFloat orgX = (300 - width *3 - padding*2)/2;
     for (int i = 0; i < imgs.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.tag = i + 10;
         [btn setImage:[UIImage imageNamed:imgs[i]] forState:UIControlStateNormal];
         btn.frame = CGRectMake(orgX + i*width + i*padding, 0, width, height);
         [btn addTarget:self action:@selector(thirdPatyLogin:) forControlEvents:UIControlEventTouchUpInside];
@@ -513,8 +515,53 @@
     return btnView;
 }
 
-- (void)thirdPatyLogin:(id)sender{
-    [self showToast:@"功能暂未实现"];
+- (void)thirdPatyLogin:(UIButton*)sender{
+//    [self showToast:@"功能暂未实现"];
+    switch (sender.tag) {
+        case 10: //qq
+            {
+                [self getUserInfoWithPlatform:JSHAREPlatformQQ];
+            }
+            break;
+        case 11: //wechat
+            {
+                [self getUserInfoWithPlatform:JSHAREPlatformWechatSession];
+            }
+                break;
+        case 12://weibo
+            {
+                [self getUserInfoWithPlatform:JSHAREPlatformSinaWeibo];
+            }
+                break;
+        default:
+            break;
+    }
+    
+}
+- (void)getUserInfoWithPlatform:(JSHAREPlatform)platfrom{
+    [JSHAREService getSocialUserInfo:platfrom handler:^(JSHARESocialUserInfo *userInfo, NSError *error) {
+        NSString *alertMessage;
+        NSString *title;
+        if (error) {
+            title = @"失败";
+            alertMessage = @"无法获取到用户信息";
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:alertMessage preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:action];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIViewController *topVC = [self topViewController];
+                [topVC presentViewController:alert animated:YES completion:nil];
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                ResultViewController *resultVC =[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"result"];
+                UIViewController *topVC = [self topViewController];
+                resultVC.resultType = LoginType;
+                resultVC.isSuccess = YES;
+                [topVC.navigationController pushViewController:resultVC animated:YES];
+            });
+        }
+    }];
 }
 
 - (UIViewController *)topViewController {
