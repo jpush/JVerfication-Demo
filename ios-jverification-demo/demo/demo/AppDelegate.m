@@ -21,8 +21,7 @@
     // Override point for customization after application launch.
     //集成极光认证sdk
     JVAuthConfig *config = [[JVAuthConfig alloc] init];
-//    config.appKey = @"填入在极光官网申请的AppKey";
-    config.appKey = @"a0e6ace8d5b3e0247e3f58db";
+    config.appKey = @"填入在极光官网申请的AppKey";
 
     
     [JVERIFICATIONService setupWithConfig:config];
