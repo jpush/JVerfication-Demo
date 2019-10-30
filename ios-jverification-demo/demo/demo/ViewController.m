@@ -560,6 +560,8 @@
                 UIViewController *topVC = [self topViewController];
                 resultVC.resultType = LoginType;
                 resultVC.isSuccess = YES;
+                //此处为了演示需要才加这段代码，清除用户登录缓存，生产环境建议删除此行代码。
+                [JSHAREService cancelAuthWithPlatform:platfrom];
                 [topVC.navigationController pushViewController:resultVC animated:YES];
             });
         }
