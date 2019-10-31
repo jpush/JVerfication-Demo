@@ -38,6 +38,15 @@ import cn.jiguang.auth.common.TextViewVertical;
 import cn.jiguang.auth.utils.PermissionUtils;
 import cn.jiguang.auth.utils.ScreenUtils;
 import cn.jiguang.auth.utils.ToastUtil;
+import cn.jiguang.share.android.api.AuthListener;
+import cn.jiguang.share.android.api.JShareInterface;
+import cn.jiguang.share.android.api.Platform;
+import cn.jiguang.share.android.model.AccessTokenInfo;
+import cn.jiguang.share.android.model.BaseResponseInfo;
+import cn.jiguang.share.android.utils.Logger;
+import cn.jiguang.share.qqmodel.QQ;
+import cn.jiguang.share.wechat.Wechat;
+import cn.jiguang.share.weibo.SinaWeibo;
 import cn.jiguang.verifysdk.api.JVerificationInterface;
 import cn.jiguang.verifysdk.api.JVerifyUIClickCallback;
 import cn.jiguang.verifysdk.api.JVerifyUIConfig;
@@ -278,16 +287,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 微信qq新浪登录
 
         LinearLayout layoutLoginGroup = new LinearLayout(this);
-        RelativeLayout.LayoutParams layoutLoginGroupParam = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutLoginGroupParam.setMargins(0, 0,0,dp2Pix(this,180.0f));
-        layoutLoginGroupParam.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM,RelativeLayout.TRUE);
-        layoutLoginGroupParam.addRule(RelativeLayout.CENTER_HORIZONTAL,RelativeLayout.TRUE);
+        RelativeLayout.LayoutParams layoutLoginGroupParam = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutLoginGroupParam.setMargins(0, dp2Pix(this, 450.0f), 0, 0);
+        layoutLoginGroupParam.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
+        layoutLoginGroupParam.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         layoutLoginGroupParam.setLayoutDirection(LinearLayout.HORIZONTAL);
         layoutLoginGroup.setLayoutParams(layoutLoginGroupParam);
 
         ImageView btnWechat = new ImageView(this);
         ImageView btnQQ = new ImageView(this);
         ImageView btnXinlang = new ImageView(this);
+
+        btnWechat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JShareInterface.authorize(Wechat.Name, mAuthListener);
+            }
+        });
+        btnQQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JShareInterface.authorize(QQ.Name, mAuthListener);
+            }
+        });
+        btnXinlang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JShareInterface.authorize(SinaWeibo.Name, mAuthListener);
+            }
+        });
+
         btnWechat.setImageResource(R.drawable.o_wechat);
         btnQQ.setImageResource(R.drawable.o_qqx);
         btnXinlang.setImageResource(R.drawable.o_weibo);
@@ -301,7 +330,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         uiConfigBuilder.addCustomView(layoutLoginGroup, false, new JVerifyUIClickCallback() {
             @Override
             public void onClicked(Context context, View view) {
-                ToastUtil.showToast(MainActivity.this,"功能未实现",1000);
+//                ToastUtil.showToast(MainActivity.this, "功能未实现", 1000);
             }
         });
 
@@ -364,6 +393,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageView btnWechat = new ImageView(this);
         ImageView btnQQ = new ImageView(this);
         ImageView btnXinlang = new ImageView(this);
+
+
+        btnWechat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JShareInterface.authorize(Wechat.Name, mAuthListener);
+
+            }
+        });
+        btnQQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JShareInterface.authorize(QQ.Name, mAuthListener);
+
+            }
+        });
+        btnXinlang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JShareInterface.authorize(SinaWeibo.Name, mAuthListener);
+
+            }
+        });
+
         btnWechat.setImageResource(R.drawable.o_wechat);
         btnQQ.setImageResource(R.drawable.o_qqx);
         btnXinlang.setImageResource(R.drawable.o_weibo);
@@ -377,7 +430,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         uiConfigBuilder.addCustomView(layoutLoginGroup, false, new JVerifyUIClickCallback() {
             @Override
             public void onClicked(Context context, View view) {
-                ToastUtil.showToast(MainActivity.this,"功能未实现",1000);
+//                ToastUtil.showToast(MainActivity.this, "功能未实现", 1000);
             }
         });
 
@@ -566,6 +619,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    private void toFailedActivityThird(int code, String errorMsg) {
+        String msg = errorMsg;
+        Intent intent = new Intent(this, LoginResultActivity.class);
+        intent.putExtra(Constants.KEY_ACTION, Constants.ACTION_THIRD_AUTHORIZED_FAILED);
+        intent.putExtra(Constants.KEY_ERORRO_MSG, msg);
+        intent.putExtra(Constants.KEY_ERROR_CODE, code);
+        startActivity(intent);
+    }
+
     private void toNativeVerifyActivity() {
         Intent intent = new Intent(this, NativeVerifyActivity.class);
         startActivity(intent);
@@ -584,5 +646,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
+
+    private AuthListener mAuthListener = new AuthListener() {
+        @Override
+        public void onComplete(Platform platform, int action, BaseResponseInfo data) {
+            Logger.dd(TAG, "onComplete:" + platform + ",action:" + action + ",data:" + data);
+            String toastMsg = null;
+            switch (action) {
+                case Platform.ACTION_AUTHORIZING:
+                    if (data instanceof AccessTokenInfo) {        //授权信息
+                        JVerificationInterface.dismissLoginAuthActivity();
+                        String token = ((AccessTokenInfo) data).getToken();//token
+                        long expiration = ((AccessTokenInfo) data).getExpiresIn();//token有效时间，时间戳
+                        String refresh_token = ((AccessTokenInfo) data).getRefeshToken();//refresh_token
+                        String openid = ((AccessTokenInfo) data).getOpenid();//openid
+                        //授权原始数据，开发者可自行处理
+                        String originData = data.getOriginData();
+                        toastMsg = "授权成功:" + data.toString();
+                        Logger.dd(TAG, "openid:" + openid + ",token:" + token + ",expiration:" + expiration + ",refresh_token:" + refresh_token);
+                        Logger.dd(TAG, "originData:" + originData);
+                        toSuccessActivity(Constants.ACTION_THIRD_AUTHORIZED_SUCCESS, token);
+                        Log.e(TAG, "onResult: loginSuccess");
+                    }
+                    break;
+            }
+            JShareInterface.removeAuthorize(platform.getName(),null);
+        }
+
+        @Override
+        public void onError(Platform platform, int action, int errorCode, Throwable error) {
+            Logger.dd(TAG, "onError:" + platform + ",action:" + action + ",error:" + error);
+            switch (action) {
+                case Platform.ACTION_AUTHORIZING:
+                    JVerificationInterface.dismissLoginAuthActivity();
+                    Log.e(TAG, "onResult: loginError:"+errorCode);
+                    toFailedActivityThird(errorCode, "授权失败" + (error != null ? error.getMessage() : "") + "---" + errorCode);
+                    break;
+            }
+        }
+
+        @Override
+        public void onCancel(Platform platform, int action) {
+            Logger.dd(TAG, "onCancel:" + platform + ",action:" + action);
+            String toastMsg = null;
+            switch (action) {
+                case Platform.ACTION_AUTHORIZING:
+                    toastMsg = "取消授权";
+                    break;
+            }
+        }
+    };
 
 }

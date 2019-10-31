@@ -80,6 +80,7 @@ public class LoginResultActivity extends AppCompatActivity implements View.OnCli
                 tvSuccess.setText("认证成功!");
                 break;
             case Constants.ACTION_NATIVE_VERIFY_SUCCESS:
+            case Constants.ACTION_THIRD_AUTHORIZED_SUCCESS:
                 tvSuccess.setText("登录成功!");
                 break;
             case Constants.ACTION_LOGIN_SUCCESS:
@@ -93,6 +94,11 @@ public class LoginResultActivity extends AppCompatActivity implements View.OnCli
             case Constants.ACTION_VERIFY_FAILED:
                 showError(mAction);
                 break;
+            case Constants.ACTION_THIRD_AUTHORIZED_FAILED:
+                warningMsgView.setVisibility(View.VISIBLE);
+                tvSuccess.setText("登录失败!");
+                tvErrorMsg.setText("[" + errorCode + "]，message=" + errorMsg);
+                break;
         }
     }
 
@@ -100,8 +106,8 @@ public class LoginResultActivity extends AppCompatActivity implements View.OnCli
         warningMsgView.setVisibility(View.VISIBLE);
         imgIcon.setImageResource(R.drawable.img_faild);
         if (action == Constants.ACTION_LOGIN_FAILED){
-            tvSuccess.setText("登录失败！");
-        }else {
+            tvSuccess.setText("登录失败!");
+        } else {
             tvSuccess.setText("认证失败!");
         }
         tvPhone.setVisibility(View.VISIBLE);

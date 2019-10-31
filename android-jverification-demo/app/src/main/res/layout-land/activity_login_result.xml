@@ -18,8 +18,8 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/view_msg_warning"
-        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/btn_back2main"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -38,16 +38,15 @@
             android:textSize="14sp"
             android:textColor="@android:color/darker_gray"
             android:visibility="invisible"
-            android:layout_marginTop="10dp"
             android:text="手机号码：" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/ll_warning"
-        android:layout_below="@+id/ll_title"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/ll_title"
         android:gravity="center">
 
         <ImageView
@@ -58,6 +57,15 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_back2main"
+        style="@style/ButtonNormal"
+        android:layout_above="@+id/view_msg_warning"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="返回首页" />
 
     <LinearLayout
         android:id="@+id/view_msg_warning"
@@ -67,7 +75,7 @@
         android:visibility="invisible"
         android:background="@drawable/shape_light_bule_square"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:orientation="vertical">
 

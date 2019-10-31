@@ -83,6 +83,43 @@
             android:launchMode="singleTop">
         </activity>
 
+
+
+
+        <activity
+            android:name="cn.jiguang.share.android.ui.JiguangShellActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+
+            <intent-filter>
+                <data android:scheme="tencent101789350" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 调用新浪原生，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 新浪微博私信，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="jsharesdk" android:host="sinaweibo"/>
+            </intent-filter>
+        </activity>
+        <!-- Optional 微信分享回调,wxapi必须在包名路径下，否则回调不成功-->
+        <activity
+            android:name="com.jiguang.verificationdemo.wxapi.WXEntryActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true" />
+
         <!-- Required -->
         <meta-data android:name="JPUSH_APPKEY" android:value="${JPUSH_APPKEY}"/>
         <meta-data android:name="JPUSH_CHANNEL" android:value="${JPUSH_CHANNEL}"/>
