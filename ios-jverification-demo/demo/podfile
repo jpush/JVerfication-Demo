@@ -7,4 +7,6 @@ target 'demo' do
 
   # Pods for demo
 pod 'SDWebImage', '~> 5.0'
+pod 'Masonry'
+
 end

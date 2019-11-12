@@ -16,6 +16,7 @@
 #import <SDWebImage/SDWebImage.h>
 #import "UIView+Tools.h"
 #import "JSHAREService.h"
+#import "UserPrivcyViewController.h"
 @interface ViewController (){
     JVUIConfig * _config;
 }
@@ -168,9 +169,22 @@
                 
                 resultVC.erroMsg = [NSString stringWithFormat:@"获取LoginToken失败code:%@,msg:%@",result[@"code"],result[@"content"]];
                 [self.navigationController pushViewController:resultVC animated:YES];
+
+//                [self showToast:[NSString stringWithFormat:@"极光认证Demo:获取Login Token失败,error: %@",result]];
             }
         });
+    } actionBlock:^(NSInteger type, NSString *content) {
+        if (type == 2 && btn.tag == 1) {
+            UserPrivcyViewController *vc = [[UserPrivcyViewController alloc] init];
+            vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+            UIViewController *topVC =  [self topViewController];
+            topVC.modalPresentationStyle = UIModalPresentationCurrentContext;
+            [topVC presentViewController:vc animated:NO completion:^{
+
+            }];
+        }
     }];
+    
 }
 - (void)removLoading{
     [UIView removeLoadingAnimation];

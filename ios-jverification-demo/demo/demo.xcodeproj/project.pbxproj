@@ -72,7 +72,7 @@
 		9D46A17D230A81AF00E6B3C6 /* 首页动画@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D46A17C230A81AF00E6B3C6 /* 首页动画@3x.gif */; };
 		9D46A180230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D46A17F230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.m */; };
 		9D50D218230BE12300BFEBA3 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D50D217230BE12300BFEBA3 /* loading@3x.gif */; };
-		9DB88B55230D298600EC0BC0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB88B54230D298600EC0BC0 /* SDWebImage.framework */; };
+		9DAE90A923794BDF001965DD /* UserPrivcyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE90A723794BDF001965DD /* UserPrivcyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,7 +155,8 @@
 		9D46A17F230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberLoginViewController.m; sourceTree = "<group>"; };
 		9D50D217230BE12300BFEBA3 /* loading@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading@3x.gif"; sourceTree = "<group>"; };
 		9D607D8A23191C2F007D1C0B /* JVDemo-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JVDemo-PrefixHeader.pch"; sourceTree = "<group>"; };
-		9DB88B54230D298600EC0BC0 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DAE90A723794BDF001965DD /* UserPrivcyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPrivcyViewController.m; sourceTree = "<group>"; };
+		9DAE90A823794BDF001965DD /* UserPrivcyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPrivcyViewController.h; sourceTree = "<group>"; };
 		DA69B293D97B8E770E58ADD8 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
 		F7A8FE26308DD792348CA171 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,7 +166,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB88B55230D298600EC0BC0 /* SDWebImage.framework in Frameworks */,
 				6633D982222D0519000C3FBA /* libc++.1.tbd in Frameworks */,
 				63EC3BAD2186FE6D0092F151 /* MobileCoreServices.framework in Frameworks */,
 				63EC3BAB2186FE5D0092F151 /* libsqlite3.tbd in Frameworks */,
@@ -229,6 +229,8 @@
 				632385482181ADA50063388C /* ResultViewController.m */,
 				9D46A17E230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.h */,
 				9D46A17F230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.m */,
+				9DAE90A823794BDF001965DD /* UserPrivcyViewController.h */,
+				9DAE90A723794BDF001965DD /* UserPrivcyViewController.m */,
 				635E5FC6217C8217006BCB29 /* Main.storyboard */,
 				635E5FC9217C8217006BCB29 /* Assets.xcassets */,
 				6388ED67217ECCDF004940B0 /* back@2x.png */,
@@ -310,7 +312,6 @@
 		63EC3B972186FDFA0092F151 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9DB88B54230D298600EC0BC0 /* SDWebImage.framework */,
 				6633D981222D0518000C3FBA /* libc++.1.tbd */,
 				63EC3BAC2186FE6C0092F151 /* MobileCoreServices.framework */,
 				63EC3BAA2186FE5D0092F151 /* libsqlite3.tbd */,
@@ -444,10 +445,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +494,7 @@
 				635E5FDE217C8C9E006BCB29 /* UIView+Tools.m in Sources */,
 				632385432181ACEC0063388C /* RegisterOrLoginViewController.m in Sources */,
 				635E5FC2217C8217006BCB29 /* AppDelegate.m in Sources */,
+				9DAE90A923794BDF001965DD /* UserPrivcyViewController.m in Sources */,
 				635E5FE1217C8D93006BCB29 /* MyNavigationController.m in Sources */,
 				63EC3B812186EFFB0092F151 /* UIView+Toast.m in Sources */,
 				632385492181ADA50063388C /* ResultViewController.m in Sources */,
@@ -648,7 +652,10 @@
 					"$(PROJECT_DIR)/demo/Lib",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -679,7 +686,10 @@
 					"$(PROJECT_DIR)/demo/Lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
