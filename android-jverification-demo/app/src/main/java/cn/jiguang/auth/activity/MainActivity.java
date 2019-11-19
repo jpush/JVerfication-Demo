@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -334,6 +335,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+
+        final View dialogViewTitle = LayoutInflater.from(getApplicationContext()).inflate(R.layout.dialog_login_title,null, false);
+
+        uiConfigBuilder.addNavControlView(dialogViewTitle, new JVerifyUIClickCallback() {
+            @Override
+            public void onClicked(Context context, View view) {
+
+            }
+        });
+
+        final View dialogView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.dialog_login_agreement,null, false);
+
+        dialogView.findViewById(R.id.dialog_login_no).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JVerificationInterface.dismissLoginAuthActivity();
+            }
+        });
+
+        dialogView.findViewById(R.id.dialog_login_yes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogView.setVisibility(View.GONE);
+                dialogViewTitle.setVisibility(View.GONE);
+            }
+        });
+
+
+        uiConfigBuilder.addCustomView(dialogView, false, new JVerifyUIClickCallback() {
+            @Override
+            public void onClicked(Context context, View view) {
+//                ToastUtil.showToast(MainActivity.this, "功能未实现", 1000);
+            }
+        });
+
+
         return uiConfigBuilder.build();
     }
 
@@ -428,6 +465,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         layoutLoginGroup.addView(btnQQ,btnParam);
         layoutLoginGroup.addView(btnXinlang,btnParam);
         uiConfigBuilder.addCustomView(layoutLoginGroup, false, new JVerifyUIClickCallback() {
+            @Override
+            public void onClicked(Context context, View view) {
+//                ToastUtil.showToast(MainActivity.this, "功能未实现", 1000);
+            }
+        });
+
+
+
+        final View dialogViewTitle = LayoutInflater.from(getApplicationContext()).inflate(R.layout.dialog_login_title,null, false);
+
+        uiConfigBuilder.addNavControlView(dialogViewTitle, new JVerifyUIClickCallback() {
+            @Override
+            public void onClicked(Context context, View view) {
+
+            }
+        });
+
+        final View dialogView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.dialog_login_agreement_land,null, false);
+
+        dialogView.findViewById(R.id.dialog_login_no).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JVerificationInterface.dismissLoginAuthActivity();
+            }
+        });
+
+        dialogView.findViewById(R.id.dialog_login_yes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogView.setVisibility(View.GONE);
+                dialogViewTitle.setVisibility(View.GONE);
+            }
+        });
+
+        uiConfigBuilder.addCustomView(dialogView, false, new JVerifyUIClickCallback() {
             @Override
             public void onClicked(Context context, View view) {
 //                ToastUtil.showToast(MainActivity.this, "功能未实现", 1000);
