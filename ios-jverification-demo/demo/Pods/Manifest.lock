@@ -1,22 +1,37 @@
 PODS:
+  - JCore (2.3.2)
+  - JShare (1.9.0):
+    - JCore (< 3.0.0, >= 1.2.0)
+  - JVerification (2.6.4):
+    - JCore (< 6.0.0, >= 2.1.6)
   - Masonry (1.1.0)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
 
 DEPENDENCIES:
+  - JCore
+  - JShare
+  - JVerification
   - Masonry
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Masonry
     - SDWebImage
+  trunk:
+    - JCore
+    - JShare
+    - JVerification
 
 SPEC CHECKSUMS:
+  JCore: e4b7b5c812de08e5b46f698947ae9b585ee81e3f
+  JShare: b78807ef0739149695a5e17a208522f632936656
+  JVerification: 85c0b1ae2a55f167b97f9d831bb8c2e03d3da22d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
 
-PODFILE CHECKSUM: 39d2d9fbd23184636e9ca050a2e3f0a86a746019
+PODFILE CHECKSUM: a02306ab42d2b172db6af5681a31ed404599d2d7
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.9.1
