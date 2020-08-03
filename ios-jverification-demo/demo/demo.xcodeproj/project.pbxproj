@@ -44,7 +44,6 @@
 		63EC3B7D2186EEAC0092F151 /* triangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC3B7B2186EEAA0092F151 /* triangle@2x.png */; };
 		63EC3B7E2186EEAC0092F151 /* triangle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC3B7C2186EEAB0092F151 /* triangle@3x.png */; };
 		63EC3B812186EFFB0092F151 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EC3B802186EFFB0092F151 /* UIView+Toast.m */; };
-		63EC3B932186FD530092F151 /* account_verify_sdk_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EC3B8E2186FD530092F151 /* account_verify_sdk_core.framework */; };
 		63EC3B992186FDFB0092F151 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EC3B982186FDFB0092F151 /* CoreLocation.framework */; };
 		63EC3B9B2186FE030092F151 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EC3B9A2186FE030092F151 /* CFNetwork.framework */; };
 		63EC3B9D2186FE150092F151 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EC3B9C2186FE150092F151 /* CoreFoundation.framework */; };
@@ -60,15 +59,8 @@
 		63EC3BB12187182C0092F151 /* 已认证@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC3BAF2187182B0092F151 /* 已认证@2x.png */; };
 		63EC3BB5218718380092F151 /* tips@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC3BB3218718370092F151 /* tips@3x.png */; };
 		63EC3BB7218718DB0092F151 /* tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63EC3BB6218718DA0092F151 /* tips@2x.png */; };
-		6633D97B222D0502000C3FBA /* account_login_sdk_noui_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6633D975222D0501000C3FBA /* account_login_sdk_noui_core.framework */; };
-		6633D97C222D0502000C3FBA /* EAccountApiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6633D976222D0502000C3FBA /* EAccountApiSDK.framework */; };
-		6633D97D222D0502000C3FBA /* account_verify_sdk_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6633D977222D0502000C3FBA /* account_verify_sdk_core.framework */; };
-		6633D97F222D0502000C3FBA /* TYRZSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6633D979222D0502000C3FBA /* TYRZSDK.framework */; };
 		6633D982222D0519000C3FBA /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6633D981222D0518000C3FBA /* libc++.1.tbd */; };
 		9BCEEE4AE27FC11AC2D47C9D /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A8FE26308DD792348CA171 /* Pods_demo.framework */; };
-		9D1FA4D0231E577D0028729D /* jverification-ios-2.4.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1FA4CF231E577D0028729D /* jverification-ios-2.4.8.a */; };
-		9D26DBAD235055D30024A39A /* jshare-ios-1.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D26DBAB235055D30024A39A /* jshare-ios-1.7.0.a */; };
-		9D46A179230A499700E6B3C6 /* jcore-ios-2.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D46A177230A499700E6B3C6 /* jcore-ios-2.1.1.a */; };
 		9D46A17D230A81AF00E6B3C6 /* 首页动画@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D46A17C230A81AF00E6B3C6 /* 首页动画@3x.gif */; };
 		9D46A180230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D46A17F230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.m */; };
 		9D50D218230BE12300BFEBA3 /* loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D50D217230BE12300BFEBA3 /* loading@3x.gif */; };
@@ -124,7 +116,6 @@
 		63EC3B7C2186EEAB0092F151 /* triangle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triangle@3x.png"; sourceTree = "<group>"; };
 		63EC3B7F2186EFFB0092F151 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		63EC3B802186EFFB0092F151 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		63EC3B8E2186FD530092F151 /* account_verify_sdk_core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = account_verify_sdk_core.framework; sourceTree = "<group>"; };
 		63EC3B982186FDFB0092F151 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		63EC3B9A2186FE030092F151 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		63EC3B9C2186FE150092F151 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -140,16 +131,7 @@
 		63EC3BAF2187182B0092F151 /* 已认证@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "已认证@2x.png"; sourceTree = "<group>"; };
 		63EC3BB3218718370092F151 /* tips@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tips@3x.png"; sourceTree = "<group>"; };
 		63EC3BB6218718DA0092F151 /* tips@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tips@2x.png"; sourceTree = "<group>"; };
-		6633D975222D0501000C3FBA /* account_login_sdk_noui_core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = account_login_sdk_noui_core.framework; sourceTree = "<group>"; };
-		6633D976222D0502000C3FBA /* EAccountApiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EAccountApiSDK.framework; sourceTree = "<group>"; };
-		6633D977222D0502000C3FBA /* account_verify_sdk_core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = account_verify_sdk_core.framework; sourceTree = "<group>"; };
-		6633D979222D0502000C3FBA /* TYRZSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYRZSDK.framework; sourceTree = "<group>"; };
 		6633D981222D0518000C3FBA /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
-		9D0EB17E231647FF00FDF08D /* JVERIFICATIONService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVERIFICATIONService.h; sourceTree = "<group>"; };
-		9D1FA4CF231E577D0028729D /* jverification-ios-2.4.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jverification-ios-2.4.8.a"; sourceTree = "<group>"; };
-		9D26DBAB235055D30024A39A /* jshare-ios-1.7.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jshare-ios-1.7.0.a"; sourceTree = "<group>"; };
-		9D26DBAC235055D30024A39A /* JSHAREService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSHAREService.h; sourceTree = "<group>"; };
-		9D46A177230A499700E6B3C6 /* jcore-ios-2.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-2.1.1.a"; sourceTree = "<group>"; };
 		9D46A17C230A81AF00E6B3C6 /* 首页动画@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "首页动画@3x.gif"; sourceTree = "<group>"; };
 		9D46A17E230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneNumberLoginViewController.h; sourceTree = "<group>"; };
 		9D46A17F230ABD0C00E6B3C6 /* PhoneNumberLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberLoginViewController.m; sourceTree = "<group>"; };
@@ -169,24 +151,16 @@
 				6633D982222D0519000C3FBA /* libc++.1.tbd in Frameworks */,
 				63EC3BAD2186FE6D0092F151 /* MobileCoreServices.framework in Frameworks */,
 				63EC3BAB2186FE5D0092F151 /* libsqlite3.tbd in Frameworks */,
-				6633D97F222D0502000C3FBA /* TYRZSDK.framework in Frameworks */,
 				63EC3BA92186FE550092F151 /* CoreGraphics.framework in Frameworks */,
-				6633D97B222D0502000C3FBA /* account_login_sdk_noui_core.framework in Frameworks */,
 				63EC3BA72186FE440092F151 /* Security.framework in Frameworks */,
 				63EC3BA52186FE3D0092F151 /* SystemConfiguration.framework in Frameworks */,
 				63EC3BA32186FE310092F151 /* CoreTelephony.framework in Frameworks */,
-				6633D97D222D0502000C3FBA /* account_verify_sdk_core.framework in Frameworks */,
 				63EC3BA12186FE290092F151 /* libz.tbd in Frameworks */,
 				63EC3B9F2186FE1C0092F151 /* libresolv.tbd in Frameworks */,
 				63EC3B9D2186FE150092F151 /* CoreFoundation.framework in Frameworks */,
-				9D46A179230A499700E6B3C6 /* jcore-ios-2.1.1.a in Frameworks */,
-				6633D97C222D0502000C3FBA /* EAccountApiSDK.framework in Frameworks */,
 				63EC3B9B2186FE030092F151 /* CFNetwork.framework in Frameworks */,
-				9D26DBAD235055D30024A39A /* jshare-ios-1.7.0.a in Frameworks */,
 				63EC3B992186FDFB0092F151 /* CoreLocation.framework in Frameworks */,
-				63EC3B932186FD530092F151 /* account_verify_sdk_core.framework in Frameworks */,
 				9BCEEE4AE27FC11AC2D47C9D /* Pods_demo.framework in Frameworks */,
-				9D1FA4D0231E577D0028729D /* jverification-ios-2.4.8.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +188,6 @@
 		635E5FBF217C8217006BCB29 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				63EC3B8B2186FD530092F151 /* Lib */,
 				63EC3B8A2186FC940092F151 /* Category */,
 				6388ED65217ECCDF004940B0 /* images */,
 				635E5FC0217C8217006BCB29 /* AppDelegate.h */,
@@ -290,23 +263,6 @@
 				6388ED63217E0295004940B0 /* NSLayoutConstraint+Tools.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		63EC3B8B2186FD530092F151 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				9D46A177230A499700E6B3C6 /* jcore-ios-2.1.1.a */,
-				9D1FA4CF231E577D0028729D /* jverification-ios-2.4.8.a */,
-				9D26DBAB235055D30024A39A /* jshare-ios-1.7.0.a */,
-				9D26DBAC235055D30024A39A /* JSHAREService.h */,
-				9D0EB17E231647FF00FDF08D /* JVERIFICATIONService.h */,
-				6633D975222D0501000C3FBA /* account_login_sdk_noui_core.framework */,
-				6633D977222D0502000C3FBA /* account_verify_sdk_core.framework */,
-				6633D976222D0502000C3FBA /* EAccountApiSDK.framework */,
-				6633D979222D0502000C3FBA /* TYRZSDK.framework */,
-				63EC3B8E2186FD530092F151 /* account_verify_sdk_core.framework */,
-			);
-			path = Lib;
 			sourceTree = "<group>";
 		};
 		63EC3B972186FDFA0092F151 /* Frameworks */ = {
